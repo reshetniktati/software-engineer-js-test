@@ -1,16 +1,14 @@
-import { useState } from "react";
-
 function ResizeInput({onSizeChange, side, size}) {
 
+    const minSizeOfCanvas = 700; //(pixels), the pic shouldn't be smaller than canvas size
     function handleSize(e) {
-        console.log('input', e.target, e.target.value);
         onSizeChange(e.target.value);
     } 
 
     return (
         <label>
             {side}:
-            <input type="number" name={side} value={size} onChange={(e) => handleSize(e)}></input>
+            <input type="number" min={minSizeOfCanvas} name={side} value={size} onChange={(e) => handleSize(e)}></input>
         </label>
     )
 }

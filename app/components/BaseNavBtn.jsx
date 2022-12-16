@@ -1,30 +1,12 @@
-function BaseNavBtn(props) {
+function BaseNavBtn({dir, onMoveHandler}) {
 
     function moveHandler(e) {
-        console.log('move', e.target.value);
+        onMoveHandler(e.target.value)
     }
 
-    let position
-    switch (props.dir) {
-        case 'left':
-            position = '+';
-            break
-        case 'right':
-            position = '+';
-            break
-        case 'up':
-            position = '+';
-            break
-        case 'down':
-            position = '+';
-            break
-
-    } 
-
     return (
-        <button className={`btn_nav-${props.dir}`} 
-            value={props.dir} 
-            onClick={(e) => {moveHandler(e)}}>{position}
+        <button className={`btn_nav-${dir}`} value={dir} onClick={(e) => {moveHandler(e)}}>
+            +
         </button>
     )
 }
