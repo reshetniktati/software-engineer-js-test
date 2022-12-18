@@ -1,6 +1,6 @@
-function BaseBtn(props) {
+function BaseBtn({children, onClick}) {
     return (
-        <button className="btn-succes">{props.children}</button>
+        <button className="btn" onClick={onClick}>{children}</button>
     )
 };
 

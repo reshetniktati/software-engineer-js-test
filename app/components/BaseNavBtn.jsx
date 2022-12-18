@@ -1,11 +1,11 @@
-function BaseNavBtn({dir, onMoveHandler}) {
+function BaseNavBtn({dir, onImgMove}) {
 
-    function moveHandler(e) {
-        onMoveHandler(e.target.value)
+    function changeDirectionHandler(e) {
+        onImgMove(e.target.value)
     }
 
     return (
-        <button className={`btn_nav-${dir}`} value={dir} onClick={(e) => {moveHandler(e)}}>
+        <button className={`btn_nav-${dir}`} value={dir} onClick={(e) => {changeDirectionHandler(e)}}>
             +
         </button>
     )
