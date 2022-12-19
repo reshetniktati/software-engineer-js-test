@@ -1,11 +1,10 @@
 const validate = {
+  img: {
+    type: function (imgType) {
+      const imgTypeRegEx = /image\/(?:jpg|jpeg|png)/;
+      return imgTypeRegEx.test(imgType);
+    }
+  }
+};
 
-    img: {
-        type: function(imgType) {
-            const imgTypeRegEx = new RegExp('image/(?:jpg|jpeg|png)');
-            return imgTypeRegEx.test(imgType);
-        },
-    },
-}
-
-export { validate }
+export { validate };
